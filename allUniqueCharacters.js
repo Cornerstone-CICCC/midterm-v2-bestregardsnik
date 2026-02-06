@@ -24,8 +24,15 @@
 */
 
 function allUniqueCharacters(s) {
-  //Place your solution here:
-  //return false;
+  const seen = {};
+  for (let i = 0; i < s.length; i++) {
+    const char = s[i];
+    if (seen[char]) {
+      return false;
+    }
+    seen[char] = true;
+  }
+  return true;
 }
 
 // Example usage:
