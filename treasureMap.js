@@ -11,7 +11,23 @@ It must return an object with this structure:
 */
 
 const treasureMap = function (grid) {
-  // Place your solution here
+    let treasureCount = 0;
+    const coordinates = [];
+
+    for (let row = 0; row < grid.length; row++) {
+        for (let col = 0; col < grid[row].length; col++) {
+            // console.log(grid[row][col]);
+            if (grid[row][col] === "X") {
+                treasureCount++;
+                coordinates.push([col, row]);
+            }
+        }
+    }
+
+    return {
+        treasureCount: treasureCount,
+        coordinates: coordinates,
+    };
 };
 
 const map1 = [
