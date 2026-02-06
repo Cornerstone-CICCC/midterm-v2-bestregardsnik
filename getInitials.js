@@ -6,7 +6,12 @@ Create a function named getInitials that receives a string of words. It should r
 */
 
 const getInitials = function (name) {
-  // Place your solution here
+  const words = name.trim().split(/\s+/);
+  let result = "";
+  for (let i = 0; i < words.length; i++) {
+    result += words[i][0].toUpperCase();
+  }
+  return result;
 };
 
 console.log(getInitials("World Wide Web")); // "WWW"
